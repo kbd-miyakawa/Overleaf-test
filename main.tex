@@ -1,0 +1,54 @@
+\documentclass[
+uplatex,%       uplatexを使う
+Overleaf=true,% ipaex
+dvipdfmx,%      driver
+b5ver_for_tokiyotosho/14Q,% 基本体裁
+useotf,%   otfパッケージを使う(macros内で読む)
+]{kbdbook9}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{macros}%%% 設定マクロ類
+\usepackage[OT1,T1]{fontenc} %% T1 encoding
+\usepackage{textcomp}
+\usepackage{lmodern}%% lmodern font
+\usepackage{amsmath,amssymb} % ams
+\usepackage{float}%% float でHを使う
+\usepackage{bm}
+\usepackage{bxtexlogo}%% さまざまなTeX関連のLOGOの用意
+    \bxtexlogoimport{*,**}
+\newcommand{\cs}[1]{{\fontencoding{T1}\texttt{\symbol{92}#1}}}
+
+\usepackage{url}
+
+\usepackage{makeidx}%%%% 坂東追加 2018/7/1
+\makeindex%%%% 坂東追加 2018/7/1
+
+
+
+\begin{document}
+\mainmatter
+\LaTeX\index{latex@\LaTeX}のテスト\index{てすと@テスト}%
+文献\cite{__2012}を参照．%% 参考文献引用
+
+%% duck!
+\begin{figure}
+\centering
+\OvlfDuck[speech=\textbf{Check!}]
+\scalebox{0.5}{\OvlfDuck[think={\textsf{?}}]}%0.5倍 
+\caption[]{アヒルの表示．\\
+オプションは\url{http://ctan.math.illinois.edu/graphics/pgf/contrib/tikzducks/tikzducks-doc.pdf}参照}
+\end{figure}
+%% snowman!
+\scsnowman[hat=true,muffler=red,arms=true,scale=10]
+
+
+
+\backmatter
+%% 参考文献
+\bibliographystyle{plain}%% 一般的な文献用スタイルファイル
+\bibliography{Zotero}    %% .bibの読み込み
+
+%% 索引
+\printindex
+
+\end{document}
